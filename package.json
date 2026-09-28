@@ -16,5 +16,10 @@
   },
   "allowScripts": {
     "esbuild": true
+  },
+  "devDependencies": {
+    "@vite-pwa/astro": "^1.2.0",
+    "install": "^0.13.0",
+    "wrangler": "^4.142.0"
   }
 }
