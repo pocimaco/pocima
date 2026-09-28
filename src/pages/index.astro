@@ -1,0 +1,436 @@
+---
+import { pwaInfo } from 'virtual:pwa-info';
+
+const title = 'Pócima';
+const description =
+  'Pócima — 25 ml. Una presentación pensada hasta el último detalle.';
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#0a0a0a" />
+
+    <link rel="icon" href="/icons/pocima-192.png" />
+<link rel="apple-touch-icon" href="/icons/pocima-192.png" />
+
+<meta property="og:title" content="Pócima — 25 ml" />
+<meta
+  property="og:description"
+  content="Pócima — una presentación pensada hasta el último detalle."
+/>
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://pocima.co/" />
+
+    {pwaInfo && <Fragment set:html={pwaInfo.webManifest.linkTag} />}
+
+    <title>{title} — 25 ml</title>
+  </head>
+
+  <body>
+    <header class="navbar">
+      <a href="/" class="logo">PÓCIMA</a>
+
+      <nav>
+        <a href="#producto">Producto</a>
+        <a href="#detalle">Detalles</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-content">
+          <p class="eyebrow">PÓCIMA · 25 ML</p>
+
+          <h1>
+            Pequeño formato.
+            <span>Gran presencia.</span>
+          </h1>
+
+          <p class="hero-text">
+            Una presentación de 25 ml diseñada para Pócima,
+            con un frasco compacto y una estética limpia.
+          </p>
+
+          <a href="#producto" class="button">
+            Descubrir Pócima
+          </a>
+        </div>
+
+        <div class="hero-product">
+          <div class="glow"></div>
+
+          <img
+            src="/images/envase-pocima-25ml.webp"
+            alt="Frasco Pócima de 25 ml"
+          />
+        </div>
+      </section>
+
+      <section id="producto" class="product-section">
+        <div class="section-image">
+          <img
+            src="/images/envase-pocima-25ml.webp"
+            alt="Envase Pócima de 25 ml"
+          />
+        </div>
+
+        <div class="section-content">
+          <p class="eyebrow">EL ENVASE</p>
+
+          <h2>
+            25 ml que
+            <span>se reconocen.</span>
+          </h2>
+
+          <p>
+            El formato de Pócima combina un cuerpo compacto en PET
+            con una tapa blanca de falda larga.
+          </p>
+
+          <div class="specs">
+            <div>
+              <strong>25 ml</strong>
+              <span>Capacidad</span>
+            </div>
+
+            <div>
+              <strong>PET</strong>
+              <span>Material</span>
+            </div>
+
+            <div>
+              <strong>#18</strong>
+              <span>Tapa</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="detalle" class="detail-section">
+        <div>
+          <p class="eyebrow">DETALLE</p>
+
+          <h2>
+            La tapa también
+            <span>es parte del diseño.</span>
+          </h2>
+
+          <p>
+            Tapa blanca modelo #18 con falda larga,
+            pensada para complementar el formato del frasco.
+          </p>
+        </div>
+
+        <div class="cap-card">
+          <img
+            src="/images/tapa-blanca.webp"
+            alt="Tapa blanca Pócima modelo #18"
+          />
+        </div>
+      </section>
+
+      <section id="contacto" class="cta">
+        <p class="eyebrow">PÓCIMA</p>
+
+        <h2>
+          Esto apenas
+          <span>comienza.</span>
+        </h2>
+
+        <a href="mailto:hola@pocima.co" class="button">
+          Contactar
+        </a>
+      </section>
+    </main>
+
+    <footer>
+      <span>© {new Date().getFullYear()} Pócima</span>
+      <span>pocima.co</span>
+    </footer>
+  </body>
+</html>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap');
+
+  :global(*) {
+    box-sizing: border-box;
+  }
+
+  :global(html) {
+    scroll-behavior: smooth;
+  }
+
+  :global(body) {
+    margin: 0;
+    background: #0a0a0a;
+    color: #f5f3ed;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  :global(a) {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 28px 6vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 10;
+  }
+
+  .logo {
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+  }
+
+  nav {
+    display: flex;
+    gap: 32px;
+    font-size: 14px;
+    color: #aaa;
+  }
+
+  nav a {
+    transition: color 0.2s ease;
+  }
+
+  nav a:hover {
+    color: white;
+  }
+
+  .hero {
+    min-height: 100vh;
+    padding: 120px 8vw 70px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 620px;
+  }
+
+  .eyebrow {
+    margin-bottom: 22px;
+    color: #aaa;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.25em;
+  }
+
+  h1,
+  h2 {
+    margin: 0;
+    font-family: 'Playfair Display', serif;
+    font-weight: 500;
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+  }
+
+  h1 {
+    font-size: clamp(64px, 8vw, 120px);
+  }
+
+  h2 {
+    font-size: clamp(48px, 6vw, 86px);
+  }
+
+  h1 span,
+  h2 span {
+    display: block;
+    color: #b8a47c;
+  }
+
+  .hero-text {
+    max-width: 450px;
+    margin: 32px 0;
+    color: #aaa;
+    font-size: 17px;
+    line-height: 1.7;
+  }
+
+  .button {
+    display: inline-flex;
+    padding: 15px 24px;
+    border: 1px solid #777;
+    border-radius: 999px;
+    font-size: 14px;
+    transition: all 0.25s ease;
+  }
+
+  .button:hover {
+    background: #f5f3ed;
+    color: #0a0a0a;
+    border-color: #f5f3ed;
+  }
+
+  .hero-product {
+    position: relative;
+    min-height: 650px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-product img {
+    position: relative;
+    z-index: 2;
+    width: min(75%, 430px);
+    max-height: 650px;
+    object-fit: contain;
+    filter: drop-shadow(0 35px 60px rgba(0, 0, 0, 0.8));
+  }
+
+  .glow {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background: #b8a47c;
+    opacity: 0.08;
+    filter: blur(100px);
+  }
+
+  .product-section,
+  .detail-section {
+    padding: 140px 10vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10vw;
+    align-items: center;
+  }
+
+  .section-image {
+    display: flex;
+    justify-content: center;
+  }
+
+  .section-image img {
+    width: min(70%, 380px);
+    filter: drop-shadow(0 30px 50px rgba(0, 0, 0, 0.7));
+  }
+
+  .section-content p,
+  .detail-section p {
+    max-width: 520px;
+    margin-top: 30px;
+    color: #999;
+    font-size: 17px;
+    line-height: 1.8;
+  }
+
+  .specs {
+    margin-top: 50px;
+    display: flex;
+    gap: 45px;
+  }
+
+  .specs div {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+  }
+
+  .specs strong {
+    font-size: 22px;
+  }
+
+  .specs span {
+    color: #777;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+  }
+
+  .cap-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 450px;
+    background: #111;
+    border: 1px solid #222;
+  }
+
+  .cap-card img {
+    width: 70%;
+  }
+
+  .cta {
+    min-height: 70vh;
+    padding: 120px 8vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: #10100f;
+  }
+
+  .cta h2 {
+    margin-bottom: 45px;
+  }
+
+  footer {
+    padding: 28px 6vw;
+    display: flex;
+    justify-content: space-between;
+    color: #666;
+    font-size: 12px;
+    border-top: 1px solid #1e1e1e;
+  }
+
+  @media (max-width: 800px) {
+    nav {
+      display: none;
+    }
+
+    .hero {
+      grid-template-columns: 1fr;
+      padding-top: 140px;
+    }
+
+    .hero-product {
+      min-height: 480px;
+    }
+
+    .hero-product img {
+      width: 70%;
+    }
+
+    .product-section,
+    .detail-section {
+      grid-template-columns: 1fr;
+      padding: 100px 8vw;
+    }
+
+    .detail-section {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .specs {
+      gap: 25px;
+    }
+
+    footer {
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
+</style>
