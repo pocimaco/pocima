@@ -1,5 +1,5 @@
 ---
-import { pwaInfo } from 'virtual:pwa-info';
+
 
 const title = 'Pócima';
 const description =
@@ -14,6 +14,10 @@ const description =
     <meta name="description" content={description} />
     <meta name="theme-color" content="#0a0a0a" />
 
+    <link rel="manifest" href="/manifest.webmanifest" />
+<link rel="icon" type="image/png" href="/icons/pocima-192.png" />
+<link rel="apple-touch-icon" href="/icons/pocima-192.png" />
+<meta name="theme-color" content="#0a0a0a" />
     <link rel="icon" href="/icons/pocima-192.png" />
 <link rel="apple-touch-icon" href="/icons/pocima-192.png" />
 
@@ -25,13 +29,15 @@ const description =
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://pocima.co/" />
 
-    {pwaInfo && <Fragment set:html={pwaInfo.webManifest.linkTag} />}
 
     <title>{title} — 25 ml</title>
   </head>
 
   <body>
     <header class="navbar">
+      <button id="install-pwa" class="install-button" hidden>
+  Instalar Pócima
+</button>
       <a href="/" class="logo">PÓCIMA</a>
 
       <nav>
@@ -152,6 +158,49 @@ const description =
       <span>© {new Date().getFullYear()} Pócima</span>
       <span>pocima.co</span>
     </footer>
+    <script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/sw.js');
+    });
+  }
+</script>
+
+<script>
+  let deferredPrompt;
+
+  const installButton = document.querySelector('#install-pwa');
+
+  window.addEventListener('beforeinstallprompt', (event) => {
+    event.preventDefault();
+
+    deferredPrompt = event;
+
+    if (installButton) {
+      installButton.hidden = false;
+    }
+  });
+
+  installButton?.addEventListener('click', async () => {
+    if (!deferredPrompt) return;
+
+    deferredPrompt.prompt();
+
+    await deferredPrompt.userChoice;
+
+    deferredPrompt = null;
+    installButton.hidden = true;
+  });
+
+  window.addEventListener('appinstalled', () => {
+    if (installButton) {
+      installButton.hidden = true;
+    }
+  });
+
+  
+</script>
+
   </body>
 </html>
 
@@ -433,4 +482,28 @@ const description =
       gap: 10px;
     }
   }
+
+  .install-button {
+  border: 1px solid #b8a47c;
+  background: transparent;
+  color: #f5f3ed;
+  padding: 10px 16px;
+  border-radius: 999px;
+  font-family: inherit;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.install-button:hover {
+  background: #b8a47c;
+  color: #0a0a0a;
+}
+
+@media (max-width: 800px) {
+  .install-button {
+    padding: 8px 12px;
+    font-size: 11px;
+  }
+}
 </style>

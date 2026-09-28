@@ -1,0 +1,25 @@
+{
+  "name": "Pocima",
+  "short_name": "Pocima",
+  "description": "Pocima - 25 ml",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0a",
+  "theme_color": "#0a0a0a",
+  "lang": "es",
+  "icons": [
+    {
+      "src": "/icons/pocima-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/pocima-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
