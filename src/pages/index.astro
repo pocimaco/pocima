@@ -15,6 +15,17 @@ const productosVisibles = productos.filter(
   (producto) => producto.publicar !== false
 );
 
+const formatoPrecio = (precio) =>
+  new Intl.NumberFormat("es-CO", {
+    style: "currency",
+    currency: "COP",
+    maximumFractionDigits: 0,
+  }).format(precio ?? 0);
+
+const nombreLaboratorio = (slug) =>
+  laboratorios.find((laboratorio) => laboratorio.slug === slug)?.nombre ??
+  "Fabricante por confirmar";
+
 const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
