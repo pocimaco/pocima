@@ -1,31 +1,40 @@
 ---
-const siteUrl = 'https://pocima.co/';
-const title = 'PÓCIMA | Bebida a base de agua con fruta en 350 ml y 30 ml';
+import categorias from "../data/categorias.json";
+import laboratorios from "../data/laboratorios.json";
+import productos from "../data/productos.json";
+
+const siteUrl = "https://pocima.co/";
+const title = "PÓCIMA | Productos naturales, suplementos y bebidas";
 const description =
-  'PÓCIMA es una bebida a base de agua con fruta. Una fórmula en dos formatos: 350 ml para tener en casa y 30 ml / 1 fl oz para llevar contigo.';
-const ogImage = `${siteUrl}images/og-pocima.jpg`; // 1200x630 px (crear este archivo)
-const instagram = 'https://www.instagram.com/pocimaco/';
+  "Explora el catálogo de PÓCIMA: productos naturales, suplementos y bebidas de diferentes fabricantes. Consulta presentaciones y precios al detal y por mayor.";
+
+const ogImage = `${siteUrl}images/og-pocima.jpg`;
+const instagram = "https://www.instagram.com/pocimaco/";
+
+const productosVisibles = productos.filter(
+  (producto) => producto.publicar !== false
+);
 
 const jsonLd = {
-  '@context': 'https://schema.org',
-  '@graph': [
+  "@context": "https://schema.org",
+  "@graph": [
     {
-      '@type': 'Organization',
-      '@id': `${siteUrl}#organization`,
-      name: 'PÓCIMA',
+      "@type": "Organization",
+      "@id": `${siteUrl}#organization`,
+      name: "PÓCIMA",
       url: siteUrl,
       logo: `${siteUrl}icons/pocima-192.png`,
-      email: 'hola@pocima.co',
+      email: "hola@pocima.co",
       sameAs: [instagram],
     },
     {
-      '@type': 'WebSite',
-      '@id': `${siteUrl}#website`,
+      "@type": "WebSite",
+      "@id": `${siteUrl}#website`,
       url: siteUrl,
-      name: 'PÓCIMA',
+      name: "PÓCIMA",
       description,
-      inLanguage: 'es-CO',
-      publisher: { '@id': `${siteUrl}#organization` },
+      inLanguage: "es-CO",
+      publisher: { "@id": `${siteUrl}#organization` },
     },
   ],
 };
