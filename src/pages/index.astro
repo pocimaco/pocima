@@ -1,70 +1,131 @@
 ---
-const title = 'PÓCIMA';
+const siteUrl = 'https://pocima.co/';
+const title = 'PÓCIMA | Bebida a base de agua con fruta en 350 ml y 30 ml';
 const description =
-  'PÓCIMA Bebidas medicinales preparadas a base de hierbas y materias vegetales.';
+  'PÓCIMA es una bebida a base de agua con fruta. Una fórmula en dos formatos: 350 ml para tener en casa y 30 ml / 1 fl oz para llevar contigo.';
+const ogImage = `${siteUrl}images/og-pocima.jpg`; // 1200x630 px (crear este archivo)
+const instagram = 'https://www.instagram.com/pocimaco/';
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Organization',
+      '@id': `${siteUrl}#organization`,
+      name: 'PÓCIMA',
+      url: siteUrl,
+      logo: `${siteUrl}icons/pocima-192.png`,
+      email: 'hola@pocima.co',
+      sameAs: [instagram],
+    },
+    {
+      '@type': 'WebSite',
+      '@id': `${siteUrl}#website`,
+      url: siteUrl,
+      name: 'PÓCIMA',
+      description,
+      inLanguage: 'es-CO',
+      publisher: { '@id': `${siteUrl}#organization` },
+    },
+  ],
+};
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang="es-CO">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>{title}</title>
-
     <meta name="description" content={description} />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
     <meta name="theme-color" content="#0a0a0a" />
+    <meta name="color-scheme" content="dark" />
 
-    <link rel="canonical" href="https://pocima.co/" />
+    <link rel="canonical" href={siteUrl} />
+    <link rel="alternate" hreflang="es-CO" href={siteUrl} />
+    <link rel="alternate" hreflang="x-default" href={siteUrl} />
+    <link rel="sitemap" href="/sitemap-index.xml" />
 
     <link rel="manifest" href="/manifest.webmanifest" />
     <link rel="icon" type="image/png" href="/icons/pocima-192.png" />
     <link rel="apple-touch-icon" href="/icons/pocima-192.png" />
 
-    <meta property="og:title" content="PÓCIMA" />
-    <meta
-      property="og:description"
-      content="PÓCIMA — bebida a base de agua con fruta, disponible en formatos de 350 ml y 30 ml / 1 fl oz."
-    />
+    <!-- Open Graph -->
+    <meta property="og:site_name" content="PÓCIMA" />
+    <meta property="og:locale" content="es_CO" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://pocima.co/" />
-
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="PÓCIMA" />
+    <meta property="og:url" content={siteUrl} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     <meta
-      name="twitter:description"
-      content="PÓCIMA — bebida a base de agua con fruta."
+      property="og:image:alt"
+      content="Envase de PÓCIMA, bebida a base de agua con fruta"
     />
 
-  <!-- Módulos CSS -->
-    <link rel="stylesheet" href="/css/styles.css" />
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@pocimaco" />
+    <meta name="twitter:creator" content="@pocimaco" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+    <meta
+      name="twitter:image:alt"
+      content="Envase de PÓCIMA, bebida a base de agua con fruta"
+    />
 
+    <!-- Datos estructurados -->
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+
+    <!-- Fuentes: preconnect + display=swap (evita bloquear el render con @import) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="preload"
+      as="image"
+      href="/images/envase-pocima-25ml.webp"
+      type="image/webp"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap"
+    />
+
+    <!-- Módulos CSS -->
+    <link rel="stylesheet" href="/css/styles.css" />
   </head>
 
   <body>
+    <a href="#contenido" class="skip-link">Saltar al contenido</a>
+
     <header class="navbar">
       <button id="install-pwa" class="install-button" hidden>
         Instalar PÓCIMA
       </button>
 
-      <a href="/" class="logo">PÓCIMA</a>
+      <a href="/" class="logo" aria-label="PÓCIMA, inicio">PÓCIMA</a>
 
-      <nav>
+      <nav aria-label="Principal">
         <a href="#producto">Producto</a>
         <a href="#detalle">Detalles</a>
         <a href="#contacto">Contacto</a>
       </nav>
     </header>
 
-    <main>
+    <main id="contenido">
       <!-- HERO -->
-      <section class="hero">
+      <section class="hero" aria-labelledby="hero-title">
         <div class="hero-content">
           <p class="eyebrow">PÓCIMA · pocima.co</p>
 
-          <h1>
+          <h1 id="hero-title">
             PÓCIMA
-            <span>PÓCIMA ORIGEN</span>
+            <span>Bebida de agua con fruta</span>
           </h1>
 
           <p class="hero-text">
@@ -72,34 +133,40 @@ const description =
             350 ml para tener en casa y 30 ml / 1 fl oz para llevar.
           </p>
 
-          <a href="#producto" class="button">
-            Conocer PÓCIMA
-          </a>
+          <a href="#producto" class="button">Conocer PÓCIMA</a>
         </div>
 
         <div class="hero-product">
-          <div class="glow"></div>
+          <div class="glow" aria-hidden="true"></div>
 
           <img
             src="/images/envase-pocima-25ml.webp"
-            alt="PÓCIMA"
+            alt="Envase de PÓCIMA, bebida a base de agua con fruta"
+            width="430"
+            height="650"
+            fetchpriority="high"
+            decoding="async"
           />
         </div>
       </section>
 
       <!-- PRODUCTO -->
-      <section id="producto" class="product-section">
+      <section id="producto" class="product-section" aria-labelledby="producto-title">
         <div class="section-image">
           <img
             src="/images/envase-pocima-25ml.webp"
-            alt="PÓCIMA"
+            alt="Presentación individual de PÓCIMA de 30 ml"
+            width="380"
+            height="575"
+            loading="lazy"
+            decoding="async"
           />
         </div>
 
         <div class="section-content">
           <p class="eyebrow">PÓCIMA</p>
 
-          <h2>
+          <h2 id="producto-title">
             Una fórmula.
             <span>Dos formatos.</span>
           </h2>
@@ -110,31 +177,29 @@ const description =
             casa y una presentación individual de 30 ml / 1 fl oz para llevar.
           </p>
 
-          <div class="specs">
-            <div>
+          <ul class="specs">
+            <li>
               <strong>350 ml</strong>
               <span>Formato hogar</span>
-            </div>
-
-            <div>
+            </li>
+            <li>
               <strong>30 ml</strong>
               <span>Formato individual</span>
-            </div>
-
-            <div>
+            </li>
+            <li>
               <strong>1 fl oz</strong>
               <span>Presentación individual</span>
-            </div>
-          </div>
+            </li>
+          </ul>
         </div>
       </section>
 
       <!-- DETALLE -->
-      <section id="detalle" class="detail-section">
+      <section id="detalle" class="detail-section" aria-labelledby="detalle-title">
         <div>
           <p class="eyebrow">LA PROPUESTA</p>
 
-          <h2>
+          <h2 id="detalle-title">
             PÓCIMA
             <span>se adapta.</span>
           </h2>
@@ -155,29 +220,43 @@ const description =
         <div class="cap-card">
           <img
             src="/images/tapa-blanca.webp"
-            alt="Detalle del envase de PÓCIMA"
+            alt="Detalle de la tapa blanca del envase de PÓCIMA"
+            width="400"
+            height="400"
+            loading="lazy"
+            decoding="async"
           />
         </div>
       </section>
 
       <!-- CONTACTO -->
-      <section id="contacto" class="cta">
+      <section id="contacto" class="cta" aria-labelledby="contacto-title">
         <p class="eyebrow">PÓCIMA</p>
 
-        <h2>
+        <h2 id="contacto-title">
           Una fórmula.
           <span>Dos formas de llevarla.</span>
         </h2>
 
-        <a href="mailto:hola@pocima.co" class="button">
-          Contactar
-        </a>
+        <a href="mailto:hola@pocima.co" class="button">Contactar</a>
+
+        <p class="social">
+          Síguenos en
+          <a
+            href={instagram}
+            rel="me noopener"
+            target="_blank"
+            aria-label="PÓCIMA en Instagram (@pocimaco)"
+            >@pocimaco</a
+          >
+        </p>
       </section>
     </main>
 
     <footer>
       <span>© {new Date().getFullYear()} PÓCIMA</span>
-      <span>pocima.co</span>
+      <a href={instagram} rel="me noopener" target="_blank">@pocimaco</a>
+      <a href="https://pocima.co/">pocima.co</a>
     </footer>
 
     <script>
@@ -186,49 +265,33 @@ const description =
           navigator.serviceWorker.register('/sw.js');
         });
       }
-    </script>
 
-    <script>
       let deferredPrompt;
-
       const installButton = document.querySelector('#install-pwa');
 
       window.addEventListener('beforeinstallprompt', (event) => {
         event.preventDefault();
-
         deferredPrompt = event;
-
-        if (installButton) {
-          installButton.hidden = false;
-        }
+        if (installButton) installButton.hidden = false;
       });
 
       installButton?.addEventListener('click', async () => {
         if (!deferredPrompt) return;
-
         deferredPrompt.prompt();
-
         await deferredPrompt.userChoice;
-
         deferredPrompt = null;
         installButton.hidden = true;
       });
 
       window.addEventListener('appinstalled', () => {
-        if (installButton) {
-          installButton.hidden = true;
-        }
+        if (installButton) installButton.hidden = true;
       });
     </script>
   </body>
 </html>
 
-
 <style>
-
-  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap');
   :global(*) {
-    
     box-sizing: border-box;
   }
 
@@ -240,12 +303,37 @@ const description =
     margin: 0;
     background: #0a0a0a;
     color: #f5f3ed;
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'DM Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
   }
 
   :global(a) {
     color: inherit;
     text-decoration: none;
+  }
+
+  :global(img) {
+    max-width: 100%;
+    height: auto;
+  }
+
+  :global(:focus-visible) {
+    outline: 2px solid #b8a47c;
+    outline-offset: 3px;
+  }
+
+  .skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 8px;
+    z-index: 100;
+    padding: 10px 16px;
+    background: #f5f3ed;
+    color: #0a0a0a;
+    border-radius: 6px;
+  }
+
+  .skip-link:focus {
+    left: 8px;
   }
 
   .navbar {
@@ -283,6 +371,7 @@ const description =
 
   .hero {
     min-height: 100vh;
+    min-height: 100svh;
     padding: 120px 8vw 70px;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -307,7 +396,7 @@ const description =
   h1,
   h2 {
     margin: 0;
-    font-family: 'Playfair Display', serif;
+    font-family: 'Playfair Display', Georgia, serif;
     font-weight: 500;
     line-height: 0.95;
     letter-spacing: -0.04em;
@@ -315,6 +404,13 @@ const description =
 
   h1 {
     font-size: clamp(64px, 8vw, 120px);
+  }
+
+  h1 span {
+    font-size: 0.4em;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-top: 14px;
   }
 
   h2 {
@@ -406,12 +502,14 @@ const description =
   }
 
   .specs {
-    margin-top: 50px;
+    margin: 50px 0 0;
+    padding: 0;
+    list-style: none;
     display: flex;
     gap: 45px;
   }
 
-  .specs div {
+  .specs li {
     display: flex;
     flex-direction: column;
     gap: 7px;
@@ -422,7 +520,7 @@ const description =
   }
 
   .specs span {
-    color: #777;
+    color: #8f8f8f;
     font-size: 12px;
     text-transform: uppercase;
     letter-spacing: 0.15em;
@@ -456,13 +554,48 @@ const description =
     margin-bottom: 45px;
   }
 
+  .social {
+    margin-top: 32px;
+    color: #aaa;
+    font-size: 14px;
+  }
+
+  .social a {
+    color: #b8a47c;
+  }
+
+  .social a:hover {
+    text-decoration: underline;
+  }
+
   footer {
     padding: 28px 6vw;
     display: flex;
     justify-content: space-between;
-    color: #666;
+    color: #8a8a8a;
     font-size: 12px;
     border-top: 1px solid #1e1e1e;
+  }
+
+  footer a:hover {
+    color: #f5f3ed;
+  }
+
+  .install-button {
+    border: 1px solid #b8a47c;
+    background: transparent;
+    color: #f5f3ed;
+    padding: 10px 16px;
+    border-radius: 999px;
+    font-family: inherit;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+  }
+
+  .install-button:hover {
+    background: #b8a47c;
+    color: #0a0a0a;
   }
 
   @media (max-width: 800px) {
@@ -503,30 +636,16 @@ const description =
       flex-direction: column;
       gap: 10px;
     }
-  }
 
-  .install-button {
-    border: 1px solid #b8a47c;
-    background: transparent;
-    color: #f5f3ed;
-    padding: 10px 16px;
-    border-radius: 999px;
-    font-family: inherit;
-    font-size: 12px;
-    cursor: pointer;
-    transition: all 0.25s ease;
-  }
-
-  .install-button:hover {
-    background: #b8a47c;
-    color: #0a0a0a;
-  }
-
-  @media (max-width: 800px) {
     .install-button {
       padding: 8px 12px;
       font-size: 11px;
     }
   }
-</style>
 
+  @media (prefers-reduced-motion: reduce) {
+    :global(html) {
+      scroll-behavior: auto;
+    }
+  }
+</style>
