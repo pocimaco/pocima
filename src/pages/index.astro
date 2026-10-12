@@ -26,6 +26,8 @@ const nombreLaboratorio = (slug) =>
   laboratorios.find((laboratorio) => laboratorio.slug === slug)?.nombre ??
   "Fabricante por confirmar";
 
+import laboratorios from "../data/laboratorios.json";
+
 const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
