@@ -26,7 +26,10 @@ const formatoPrecio = (precio) =>
     maximumFractionDigits: 0,
   }).format(precio ?? 0);
 
-{laboratorios.find((lab) => lab.slug === producto.laboratorio)?.nombre ?? "Fabricante por confirmar"}
+const nombreLaboratorio = (slug) =>
+  laboratorios.find((laboratorio) => laboratorio.slug === slug)?.nombre ??
+  "Fabricante por confirmar";
+
 const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
@@ -118,7 +121,7 @@ const jsonLd = {
     />
 
       <!-- CSS -->
- <link rel="stylesheet" href="/css/styles.css" />
+  <link rel="stylesheet" href="/public/css/styles.css" />
   </head>
 
 <body>
