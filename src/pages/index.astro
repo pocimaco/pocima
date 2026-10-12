@@ -5,9 +5,9 @@ import productos from "../data/productos.json";
 import "../styles/global.css";
 
 const siteUrl = "https://pocima.co/";
-const title = "PÓCIMA | Bebidas, productos naturales y suplementos";
+const title = "POCIMA | Bebidas, productos naturales y suplementos";
 const description =
-  "Descubre PÓCIMA, una marca comercial con bebidas, productos naturales y suplementos de diferentes fabricantes. Explora el catálogo y consulta las presentaciones disponibles.";
+  "Descubre POCIMA, una marca comercial con bebidas, productos naturales y suplementos de diferentes fabricantes. Explora el catálogo y consulta las presentaciones disponibles.";
 
 const ogImage = `${siteUrl}images/og-pocima.jpg`;
 const instagram = "https://www.instagram.com/pocimaco/";
@@ -37,7 +37,7 @@ const jsonLd = {
     {
       "@type": "Organization",
       "@id": `${siteUrl}#organization`,
-      name: "PÓCIMA",
+      name: "POCIMA",
       url: siteUrl,
       logo: `${siteUrl}icons/pocima-192.png`,
       email: "hola@pocima.co",
@@ -47,7 +47,7 @@ const jsonLd = {
       "@type": "WebSite",
       "@id": `${siteUrl}#website`,
       url: siteUrl,
-      name: "PÓCIMA",
+      name: "POCIMA",
       description,
       inLanguage: "es-CO",
       publisher: { "@id": `${siteUrl}#organization` },
@@ -78,7 +78,7 @@ const jsonLd = {
     <link rel="apple-touch-icon" href="/icons/pocima-192.png" />
 
     <!-- Open Graph -->
-    <meta property="og:site_name" content="PÓCIMA" />
+    <meta property="og:site_name" content="POCIMA" />
     <meta property="og:locale" content="es_CO" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={siteUrl} />
@@ -89,7 +89,7 @@ const jsonLd = {
     <meta property="og:image:height" content="630" />
     <meta
   property="og:image:alt"
-  content="PÓCIMA, marca comercial de productos naturales, suplementos y bebidas"
+  content="POCIMA, marca comercial de productos naturales, suplementos y bebidas"
 />
 
     <!-- Twitter / X -->
@@ -101,7 +101,7 @@ const jsonLd = {
     <meta name="twitter:image" content={ogImage} />
     <meta
   name="twitter:image:alt"
-  content="PÓCIMA, marca comercial de productos naturales, suplementos y bebidas"
+  content="POCIMA, marca comercial de productos naturales, suplementos y bebidas"
 />
 
     <!-- Datos estructurados -->
@@ -127,10 +127,10 @@ const jsonLd = {
 
   <header class="navbar">
     <button id="install-pwa" class="install-button" hidden>
-      Instalar PÓCIMA
+      Instalar POCIMA
     </button>
 
-    <a href="/" class="logo" aria-label="PÓCIMA, inicio">PÓCIMA</a>
+    <a href="/" class="logo" aria-label="POCIMA, inicio">POCIMA</a>
 
     <nav aria-label="Principal">
       <a href="#categorias">Categorías</a>
@@ -144,10 +144,10 @@ const jsonLd = {
     <!-- HERO DE MARCA -->
     <section class="hero" aria-labelledby="hero-title">
       <div class="hero-content">
-        <p class="eyebrow">PÓCIMA · pocima.co</p>
+        <p class="eyebrow">POCIMA · pocima.co</p>
 
         <h1 id="hero-title">
-          PÓCIMA
+          POCIMA
           <span>Un catálogo para descubrir.</span>
         </h1>
 
@@ -160,10 +160,10 @@ const jsonLd = {
         <a href="#catalogo" class="button">Explorar catálogo</a>
       </div>
 
-      <div class="hero-product brand-visual" aria-label="Marca PÓCIMA">
+      <div class="hero-product brand-visual" aria-label="Marca POCIMA">
         <div class="glow" aria-hidden="true"></div>
         <div class="brand-mark">
-          PÓCIMA
+          POCIMA
           <span>Descubre el catálogo</span>
         </div>
       </div>
@@ -208,7 +208,7 @@ const jsonLd = {
     >
       <div class="section-heading">
         <p class="eyebrow">PRODUCTOS</p>
-        <h2 id="catalogo-title">El catálogo <span>PÓCIMA.</span></h2>
+        <h2 id="catalogo-title">El catálogo <span>POCIMA.</span></h2>
         <p>
           Consulta las presentaciones y los precios disponibles.
           Cada producto conserva su propia página.
@@ -298,7 +298,7 @@ const jsonLd = {
           Diferentes orígenes. <span>Un catálogo.</span>
         </h2>
         <p>
-          PÓCIMA reúne productos elaborados por diferentes
+          POCIMA reúne productos elaborados por diferentes
           fabricantes y laboratorios.
         </p>
       </div>
@@ -318,7 +318,7 @@ const jsonLd = {
       class="cta"
       aria-labelledby="contacto-title"
     >
-      <p class="eyebrow">PÓCIMA</p>
+      <p class="eyebrow">POCIMA</p>
 
       <h2 id="contacto-title">
         ¿Buscas un producto?
@@ -340,14 +340,14 @@ const jsonLd = {
           href={instagram}
           rel="me noopener"
           target="_blank"
-          aria-label="PÓCIMA en Instagram (@pocimaco)"
+          aria-label="POCIMA en Instagram (@pocimaco)"
         >@pocimaco</a>
       </p>
     </section>
   </main>
 
   <footer>
-    <span>© {new Date().getFullYear()} PÓCIMA</span>
+    <span>© {new Date().getFullYear()} POCIMA</span>
     <a href={instagram} rel="me noopener" target="_blank">
       @pocimaco
     </a>
