@@ -109,195 +109,268 @@ const jsonLd = {
     <link rel="stylesheet" href="/css/styles.css" />
   </head>
 
-  <body>
-    <a href="#contenido" class="skip-link">Saltar al contenido</a>
+<body>
+  <a href="#contenido" class="skip-link">Saltar al contenido</a>
 
-    <header class="navbar">
-      <button id="install-pwa" class="install-button" hidden>
-        Instalar PÓCIMA
-      </button>
+  <header class="navbar">
+    <button id="install-pwa" class="install-button" hidden>
+      Instalar PÓCIMA
+    </button>
 
-      <a href="/" class="logo" aria-label="PÓCIMA, inicio">PÓCIMA</a>
+    <a href="/" class="logo" aria-label="PÓCIMA, inicio">PÓCIMA</a>
 
-      <nav aria-label="Principal">
-        <a href="#producto">Producto</a>
-        <a href="#detalle">Detalles</a>
-        <a href="#contacto">Contacto</a>
-      </nav>
-    </header>
+    <nav aria-label="Principal">
+      <a href="#categorias">Categorías</a>
+      <a href="#catalogo">Catálogo</a>
+      <a href="#laboratorios">Laboratorios</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
 
-    <main id="contenido">
-      <!-- HERO -->
-      <section class="hero" aria-labelledby="hero-title">
-        <div class="hero-content">
-          <p class="eyebrow">PÓCIMA · pocima.co</p>
+  <main id="contenido">
+    <!-- HERO DE MARCA -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-content">
+        <p class="eyebrow">PÓCIMA · pocima.co</p>
 
-          <h1 id="hero-title">
-            PÓCIMA
-            <span>Bebida de agua con fruta</span>
-          </h1>
+        <h1 id="hero-title">
+          PÓCIMA
+          <span>Un catálogo para descubrir.</span>
+        </h1>
 
-          <p class="hero-text">
-            Bebida a base de agua con fruta, presentada en dos formatos:
-            350 ml para tener en casa y 30 ml / 1 fl oz para llevar.
-          </p>
-
-          <a href="#producto" class="button">Conocer PÓCIMA</a>
-        </div>
-
-        <div class="hero-product">
-          <div class="glow" aria-hidden="true"></div>
-
-          <img
-            src="/images/envase-pocima-25ml.webp"
-            alt="Envase de PÓCIMA, bebida a base de agua con fruta"
-            width="430"
-            height="650"
-            fetchpriority="high"
-            decoding="async"
-          />
-        </div>
-      </section>
-
-      <!-- PRODUCTO -->
-      <section id="producto" class="product-section" aria-labelledby="producto-title">
-        <div class="section-image">
-          <img
-            src="/images/envase-pocima-25ml.webp"
-            alt="Presentación individual de PÓCIMA de 30 ml"
-            width="380"
-            height="575"
-            loading="lazy"
-            decoding="async"
-          />
-        </div>
-
-        <div class="section-content">
-          <p class="eyebrow">PÓCIMA</p>
-
-          <h2 id="producto-title">
-            Una fórmula.
-            <span>Dos formatos.</span>
-          </h2>
-
-          <p>
-            PÓCIMA es una bebida a base de agua con fruta.
-            Su propuesta contempla una presentación de 350 ml para tener en
-            casa y una presentación individual de 30 ml / 1 fl oz para llevar.
-          </p>
-
-          <ul class="specs">
-            <li>
-              <strong>350 ml</strong>
-              <span>Formato hogar</span>
-            </li>
-            <li>
-              <strong>30 ml</strong>
-              <span>Formato individual</span>
-            </li>
-            <li>
-              <strong>1 fl oz</strong>
-              <span>Presentación individual</span>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <!-- DETALLE -->
-      <section id="detalle" class="detail-section" aria-labelledby="detalle-title">
-        <div>
-          <p class="eyebrow">LA PROPUESTA</p>
-
-          <h2 id="detalle-title">
-            PÓCIMA
-            <span>se adapta.</span>
-          </h2>
-
-          <p>
-            El formato de 350 ml está pensado para tener PÓCIMA disponible
-            en casa. El formato individual de 30 ml / 1 fl oz está pensado
-            para llevar fácilmente contigo.
-          </p>
-
-          <p>
-            La presentación, el contenido y la información del producto se
-            irán actualizando conforme avance la producción y tengamos la
-            información técnica definitiva.
-          </p>
-        </div>
-
-        <div class="cap-card">
-          <img
-            src="/images/tapa-blanca.webp"
-            alt="Detalle de la tapa blanca del envase de PÓCIMA"
-            width="400"
-            height="400"
-            loading="lazy"
-            decoding="async"
-          />
-        </div>
-      </section>
-
-      <!-- CONTACTO -->
-      <section id="contacto" class="cta" aria-labelledby="contacto-title">
-        <p class="eyebrow">PÓCIMA</p>
-
-        <h2 id="contacto-title">
-          Una fórmula.
-          <span>Dos formas de llevarla.</span>
-        </h2>
-
-        <a href="mailto:hola@pocima.co" class="button">Contactar</a>
-
-        <p class="social">
-          Síguenos en
-          <a
-            href={instagram}
-            rel="me noopener"
-            target="_blank"
-            aria-label="PÓCIMA en Instagram (@pocimaco)"
-            >@pocimaco</a
-          >
+        <p class="hero-text">
+          Productos naturales, suplementos y bebidas de diferentes
+          fabricantes, reunidos en un solo lugar. Explora nuestras
+          categorías y encuentra la presentación que buscas.
         </p>
-      </section>
-    </main>
 
-    <footer>
-      <span>© {new Date().getFullYear()} PÓCIMA</span>
-      <a href={instagram} rel="me noopener" target="_blank">@pocimaco</a>
-      <a href="https://pocima.co/">pocima.co</a>
-    </footer>
+        <a href="#catalogo" class="button">Explorar catálogo</a>
+      </div>
 
-    <script>
-      if ('serviceWorker' in navigator) {
-        window.addEventListener('load', () => {
-          navigator.serviceWorker.register('/sw.js');
-        });
-      }
+      <div class="hero-product brand-visual" aria-label="Marca PÓCIMA">
+        <div class="glow" aria-hidden="true"></div>
+        <div class="brand-mark">
+          PÓCIMA
+          <span>Descubre el catálogo</span>
+        </div>
+      </div>
+    </section>
 
-      let deferredPrompt;
-      const installButton = document.querySelector('#install-pwa');
+    <!-- CATEGORÍAS -->
+    <section
+      id="categorias"
+      class="catalogo-section"
+      aria-labelledby="categorias-title"
+    >
+      <div class="section-heading">
+        <p class="eyebrow">EXPLORA</p>
+        <h2 id="categorias-title">Nuestras <span>categorías.</span></h2>
+        <p>
+          Encuentra productos por tipo, presentación o línea.
+          Selecciona una categoría para ver sus productos.
+        </p>
+      </div>
 
-      window.addEventListener('beforeinstallprompt', (event) => {
-        event.preventDefault();
-        deferredPrompt = event;
-        if (installButton) installButton.hidden = false;
+      <div class="category-grid">
+        {categorias.map((categoria) => (
+          <a
+            class="category-card"
+            href={`#categoria-${categoria.slug}`}
+          >
+            <span class="category-name">{categoria.nombre}</span>
+            <span class="category-description">
+              {categoria.descripcion}
+            </span>
+            <span class="category-link">Explorar categoría ↗</span>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <!-- CATÁLOGO -->
+    <section
+      id="catalogo"
+      class="catalogo-section"
+      aria-labelledby="catalogo-title"
+    >
+      <div class="section-heading">
+        <p class="eyebrow">PRODUCTOS</p>
+        <h2 id="catalogo-title">El catálogo <span>PÓCIMA.</span></h2>
+        <p>
+          Consulta las presentaciones y los precios disponibles.
+          Cada producto conserva su propia página.
+        </p>
+      </div>
+
+      {categorias.map((categoria) => {
+        const productosCategoria = productosVisibles.filter(
+          (producto) => producto.categorias?.includes(categoria.slug)
+        );
+
+        return (
+          <section
+            id={`categoria-${categoria.slug}`}
+            class="catalog-category"
+            aria-labelledby={`titulo-${categoria.slug}`}
+          >
+            <div class="group-heading">
+              <h3 id={`titulo-${categoria.slug}`}>
+                {categoria.nombre}
+              </h3>
+              <p>{categoria.descripcion}</p>
+            </div>
+
+            {productosCategoria.length > 0 ? (
+              <div class="product-grid">
+                {productosCategoria.map((producto) => {
+                  const foto =
+                    producto.imagenes?.[0] ||
+                    producto.imagenesOriginales?.[0];
+
+                  return (
+                    <a
+                      class="tarjeta-catalogo"
+                      href={`/${producto.slug}`}
+                    >
+                      <div class="foto-catalogo">
+                        {foto ? (
+                          <img
+                            src={foto}
+                            alt={producto.nombre}
+                            loading="lazy"
+                            decoding="async"
+                          />
+                        ) : (
+                          <span>Fotografía pendiente</span>
+                        )}
+                      </div>
+
+                      <span class="fabricante">
+                        {nombreLaboratorio(producto.laboratorio)}
+                      </span>
+
+                      <h4>{producto.nombre}</h4>
+
+                      <span class="detalle">
+                        {producto.presentacion}
+                      </span>
+
+                      <span class="precio">
+                        {formatoPrecio(producto.precioDetal)}
+                      </span>
+                    </a>
+                  );
+                })}
+              </div>
+            ) : (
+              <p class="empty-category">
+                Estamos preparando los productos de esta categoría.
+              </p>
+            )}
+          </section>
+        );
+      })}
+    </section>
+
+    <!-- LABORATORIOS Y FABRICANTES -->
+    <section
+      id="laboratorios"
+      class="catalogo-section"
+      aria-labelledby="laboratorios-title"
+    >
+      <div class="section-heading">
+        <p class="eyebrow">NUESTROS FABRICANTES</p>
+        <h2 id="laboratorios-title">
+          Diferentes orígenes. <span>Un catálogo.</span>
+        </h2>
+        <p>
+          PÓCIMA reúne productos elaborados por diferentes
+          fabricantes y laboratorios.
+        </p>
+      </div>
+
+      <div class="laboratory-grid">
+        {laboratorios.map((laboratorio) => (
+          <article class="laboratory-card">
+            <h3>{laboratorio.nombre}</h3>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section
+      id="contacto"
+      class="cta"
+      aria-labelledby="contacto-title"
+    >
+      <p class="eyebrow">PÓCIMA</p>
+
+      <h2 id="contacto-title">
+        ¿Buscas un producto?
+        <span>Estamos para ayudarte.</span>
+      </h2>
+
+      <p class="hero-text">
+        Consulta las presentaciones disponibles y solicita información
+        sobre tus productos de interés.
+      </p>
+
+      <a href="mailto:hola@pocima.co" class="button">
+        Contactar
+      </a>
+
+      <p class="social">
+        Síguenos en
+        <a
+          href={instagram}
+          rel="me noopener"
+          target="_blank"
+          aria-label="PÓCIMA en Instagram (@pocimaco)"
+        >@pocimaco</a>
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <span>© {new Date().getFullYear()} PÓCIMA</span>
+    <a href={instagram} rel="me noopener" target="_blank">
+      @pocimaco
+    </a>
+    <a href="https://pocima.co/">pocima.co</a>
+  </footer>
+
+  <script>
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker.register("/sw.js").catch(() => {});
       });
+    }
 
-      installButton?.addEventListener('click', async () => {
-        if (!deferredPrompt) return;
-        deferredPrompt.prompt();
-        await deferredPrompt.userChoice;
-        deferredPrompt = null;
-        installButton.hidden = true;
-      });
+    let deferredPrompt;
+    const installButton = document.querySelector("#install-pwa");
 
-      window.addEventListener('appinstalled', () => {
-        if (installButton) installButton.hidden = true;
-      });
-    </script>
-  </body>
-</html>
+    window.addEventListener("beforeinstallprompt", (event) => {
+      event.preventDefault();
+      deferredPrompt = event;
+      if (installButton) installButton.hidden = false;
+    });
+
+    installButton?.addEventListener("click", async () => {
+      if (!deferredPrompt) return;
+
+      deferredPrompt.prompt();
+      await deferredPrompt.userChoice;
+
+      deferredPrompt = null;
+      installButton.hidden = true;
+    });
+
+    window.addEventListener("appinstalled", () => {
+      if (installButton) installButton.hidden = true;
+    });
+  </script>
+</body>
 
 <style>
   :global(*) {
